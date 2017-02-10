@@ -1,0 +1,100 @@
+@keyframes shrink {
+  0% {
+    background-size: 110% 110%; }
+  100% {
+    background-size: 100% 100%; } }
+.landing-page {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  background-image: url(../Images/LandingPage.jpg);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: cover;
+  animation: shrink 15s infinite alternate; }
+  .landing-page .logo {
+    width: 100%; }
+    .landing-page .logo img {
+      width: 40%;
+      max-width: 200px; }
+  .landing-page .loginAndRegistration {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    height: 380px;
+    min-height: 410px;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.7);
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 60px; }
+    .landing-page .loginAndRegistration .header {
+      width: 100%;
+      height: 80px;
+      font-family: 'Imibuza Main';
+      text-align: center;
+      font-size: 36px;
+      line-height: 80px;
+      color: #757575; }
+    .landing-page .loginAndRegistration .quote {
+      width: 100%;
+      height: 100px; }
+    .landing-page .loginAndRegistration .slogan {
+      position: relative;
+      margin-top: 5px;
+      width: 100%;
+      height: 40px;
+      text-align: center; }
+      .landing-page .loginAndRegistration .slogan img {
+        height: 90%; }
+    .landing-page .loginAndRegistration .details {
+      width: 100%;
+      min-height: 30px;
+      padding: 15px 0; }
+      .landing-page .loginAndRegistration .details input {
+        text-align: center;
+        height: 40px;
+        border-radius: 0;
+        outline: none;
+        margin: 10px 0 !important;
+        width: 90%;
+        font-size: 16px;
+        border: 0; }
+      .landing-page .loginAndRegistration .details .btn {
+        width: 100%;
+        border-radius: 0;
+        width: 90%;
+        height: 50px;
+        background-color: #F46506;
+        font-size: 16px;
+        color: white;
+        transition: all 0.3s; }
+        .landing-page .loginAndRegistration .details .btn:hover {
+          background-color: #c25005; }
+      .landing-page .loginAndRegistration .details label {
+        color: #282828;
+        font-family: 'Roboto Light';
+        font-weight: normal;
+        margin-top: 5px;
+        opacity: 0.8; }
+      .landing-page .loginAndRegistration .details a {
+        margin-top: 5px;
+        color: #282828;
+        font-family: 'Roboto Light';
+        font-weight: bold; }
+        .landing-page .loginAndRegistration .details a:hover {
+          cursor: pointer; }
+    .landing-page .loginAndRegistration .mwabu {
+      position: absolute;
+      bottom: 0;
+      width: 100%; }
+      .landing-page .loginAndRegistration .mwabu img {
+        width: 40%; }
+    .landing-page .loginAndRegistration .welcome-message {
+      width: 100%;
+      margin-top: 100px;
+      font-family: "Imibuza Main";
+      text-align: center;
+      color: #F46506;
+      font-size: 36px; }
+
+/*# sourceMappingURL=landing-page.css.map */

@@ -1,0 +1,142 @@
+$navHeight: 70px;
+$font-size-header: 36px;
+
+$color-main: #F46506;
+$color-text: #282828;
+
+$font-size-main: 16px;
+
+$button-height: 50px;
+
+$transition: all 0.3s;
+
+$max-width: 400px;
+
+@keyframes shrink {
+  0% {
+    background-size: 110% 110%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}
+
+.landing-page{
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    background-image: url(../Images/LandingPage.jpg);
+    background-repeat: no-repeat;
+    background-position: left bottom; 
+    background-size: cover;
+    animation: shrink 15s infinite alternate;
+    .logo{
+        width: 100%;
+        img{
+            width: 40%;
+            max-width: 200px;
+            
+        }
+    }
+    .loginAndRegistration{
+        position: relative;
+        margin-top: 20px;
+        width: 100%;
+        height: 380px;
+        min-height: 410px;
+        max-width: $max-width;
+        background: rgba(255,255,255,0.7);
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 60px;
+        
+        .header{
+            width: 100%;
+            height: 80px;
+            font-family: 'Imibuza Main';
+            text-align: center;
+            font-size: $font-size-header;
+            line-height: 80px;
+            color: lighten($color-text,30);
+            //opacity: 0.5;
+        }
+        .quote{
+            width: 100%;
+            height: 100px;
+        }
+        .slogan{
+            position: relative;
+            margin-top: 5px;
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            img{
+                height: 90%;
+            }
+            
+        }
+        .details{
+            width: 100%;
+            min-height: 30px;
+            padding: 15px 0 ;
+            input{
+                text-align: center;
+                height: 40px;
+                border-radius: 0;
+                outline:none;
+                margin: 10px 0 !important;
+                width: 90%;
+                font-size: $font-size-main;
+                border: 0;
+            }
+            .btn{
+                width: 100%;
+                border-radius: 0;
+                width: 90%;
+                height: $button-height;
+                background-color: $color-main;
+                font-size: $font-size-main;
+                color: white;
+                transition: $transition;
+                &:hover{
+                    background-color: darken($color-main,10);
+                }
+            }
+            label{
+                color: $color-text;
+                font-family:'Roboto Light';
+                font-weight: normal;
+                margin-top: 5px;
+                opacity: 0.8;
+            }
+            a{
+                margin-top: 5px;
+                color: $color-text;
+                font-family:'Roboto Light';
+                font-weight: bold;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+        .mwabu{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            img{
+                width: 40%;
+            }
+        }
+
+        .welcome-message{
+            width: 100%;
+            
+            
+            font-family: "Imibuza Main";
+            text-align: center;
+            color: $color-main;
+            font-size: $font-size-header;
+        }
+    }
+
+}
+

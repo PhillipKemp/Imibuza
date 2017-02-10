@@ -211,6 +211,20 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Imibuza-Logo-Dark.png" />
+    <Content Include="Content\Images\Imibuza-Logo-White.png" />
+    <Content Include="Content\Images\LandingPage.jpg" />
+    <Content Include="Content\Images\logo-white.png" />
+    <Content Include="Content\Images\Slogan.png" />
+    <Content Include="Content\Styling\fonts.css">
+      <DependentUpon>fonts.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Styling\landing-page.css">
+      <DependentUpon>landing-page.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Styling\spinner.css">
+      <DependentUpon>spinner.scss</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -220,6 +234,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Styling\landing-page.scss" />
+    <Content Include="Content\Fonts\Beauty and the Beast Sample.ttf" />
+    <Content Include="Content\Styling\fonts.scss" />
+    <Content Include="Content\Fonts\Roboto-Light.ttf" />
+    <Content Include="Content\Fonts\Roboto-Regular.ttf" />
+    <Content Include="Content\Styling\spinner.scss" />
     <None Include="Properties\PublishProfiles\Imibuza.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -268,6 +288,8 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\Shared\_Navbar.cshtml" />
+    <Content Include="Views\Shared\_spinner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
