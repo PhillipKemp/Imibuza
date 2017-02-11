@@ -11,11 +11,13 @@
 
 .btn-bubble-black{
     margin: 5px;
+    border-radius: 0;
     width: 50%;
     height: 40px;
     background-color: $color-text;
     font-size: $font-size-main;
     transition: $transition;
+    border: 0;
     color: white;
      &:hover{
         background-color: darken($color-text,10);
@@ -25,14 +27,36 @@
 
 .btn-bubble-orange{
     margin: 5px;
+    border-radius: 0;
     width: 50%;
     height: 40px;
     background-color: $color-main;
     font-size: $font-size-main;
     transition: $transition;
+    border: 0;
     color: white;
      &:hover{
         background-color: darken($color-main,10);
         color: white;
     }
 }
+
+//width: $width;
+//    border-radius: 0;
+//
+//    @if $float{
+//        float: $float;
+//    }
+//
+//    
+//    height: $button-height !important;
+//    border-bottom-left-radius: 100px !important;
+//    background-color: $color;
+//    font-size: $font-size-main;
+//    color: $fontColor;
+//    transition: $transition;
+//    border: 0;
+//    &:hover{
+//        background-color: darken($color,10);
+//        color: white;
+//    }

@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using Imibuza.Web.Controllers;
+using Imibuza.Web.Models;
 using Microsoft.AspNet.Identity;
 
 namespace Imibuza.Web.CustomAuth

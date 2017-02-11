@@ -9,7 +9,6 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Imibuza.Web.Models;
-using ApplicationUser = Imibuza.Web.CustomAuth.ApplicationUser;
 
 namespace Imibuza.Web.Controllers
 {
@@ -17,13 +16,13 @@ namespace Imibuza.Web.Controllers
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
-        private CustomUserManager _userManager;
+        private ApplicationUserManager _userManager;
 
         public AccountController()
         {
         }
 
-        public AccountController(CustomUserManager userManager, ApplicationSignInManager signInManager)
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -35,9 +34,13 @@ namespace Imibuza.Web.Controllers
             private set { _signInManager = value; }
         }
 
-        public CustomUserManager UserManager
+        public ApplicationUserManager UserManager
         {
-            get { return _userManager ?? HttpContext.GetOwinContext().GetUserManager<CustomUserManager>(); }
+            get
+            {
+                var customUserManager = _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return customUserManager;
+            }
             private set { _userManager = value; }
         }
 
@@ -69,7 +72,7 @@ namespace Imibuza.Web.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    return Redirect("../Home/Dashboard");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:

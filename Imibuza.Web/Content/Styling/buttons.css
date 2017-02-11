@@ -28,11 +28,13 @@
 
 .btn-bubble-black {
   margin: 5px;
+  border-radius: 0;
   width: 50%;
   height: 40px;
   background-color: #282828;
   font-size: 16px;
   transition: all 0.3s;
+  border: 0;
   color: white; }
   .btn-bubble-black:hover {
     background-color: #0e0e0e;
@@ -40,11 +42,13 @@
 
 .btn-bubble-orange {
   margin: 5px;
+  border-radius: 0;
   width: 50%;
   height: 40px;
   background-color: #F46506;
   font-size: 16px;
   transition: all 0.3s;
+  border: 0;
   color: white; }
   .btn-bubble-orange:hover {
     background-color: #c25005;

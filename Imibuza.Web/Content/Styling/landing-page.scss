@@ -29,13 +29,14 @@
         position: absolute;
         top: 10px;
         left: 20px;
-        max-width: 200px;
-        width: 50%;
-        max-height: 100px;
+        max-width: 150px;
+        height: 40%;
+        
         img{
             margin-top: 10px;
             width: 100%;
             transition: all 0.5s;
+            
         }
     }
 
@@ -59,12 +60,12 @@
 
     .loginAndRegistration{
         position: relative;
-        margin-top: 20px;
+        margin-top: 100px;
         width: 100%;
         overflow: auto;
         min-height: 410px;
         max-width: $max-width;
-        background: rgba(255,255,255,0.7);
+        background: $dark-background-opacity;
         border-top-right-radius: 30px;
         border-bottom-left-radius: 60px;
         //padding: 40px;
