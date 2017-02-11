@@ -1,0 +1,38 @@
+@import '_mixins.scss';
+@import '_variables.scss'; 
+
+.btn-black{
+    @include button($color-text, white, 100%, null)
+}
+
+.btn-orange{
+    @include button($color-main, white, 100%, null)
+}
+
+.btn-bubble-black{
+    margin: 5px;
+    width: 50%;
+    height: 40px;
+    background-color: $color-text;
+    font-size: $font-size-main;
+    transition: $transition;
+    color: white;
+     &:hover{
+        background-color: darken($color-text,10);
+        color: white;
+    }
+}
+
+.btn-bubble-orange{
+    margin: 5px;
+    width: 50%;
+    height: 40px;
+    background-color: $color-main;
+    font-size: $font-size-main;
+    transition: $transition;
+    color: white;
+     &:hover{
+        background-color: darken($color-main,10);
+        color: white;
+    }
+}

@@ -199,6 +199,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="CustomAuth\ApplicationUser.cs" />
+    <Compile Include="CustomAuth\CustomUserManager.cs" />
+    <Compile Include="CustomAuth\CustomUserSore.cs" />
+    <Compile Include="CustomAuth\OldSystemPasswordHasher.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -214,8 +218,11 @@
     <Content Include="Content\Images\Imibuza-Logo-Dark.png" />
     <Content Include="Content\Images\Imibuza-Logo-White.png" />
     <Content Include="Content\Images\LandingPage.jpg" />
-    <Content Include="Content\Images\logo-white.png" />
+    <Content Include="Content\Images\mwabo.png" />
     <Content Include="Content\Images\Slogan.png" />
+    <Content Include="Content\Styling\buttons.css">
+      <DependentUpon>buttons.scss</DependentUpon>
+    </Content>
     <Content Include="Content\Styling\fonts.css">
       <DependentUpon>fonts.scss</DependentUpon>
     </Content>
@@ -240,6 +247,10 @@
     <Content Include="Content\Fonts\Roboto-Light.ttf" />
     <Content Include="Content\Fonts\Roboto-Regular.ttf" />
     <Content Include="Content\Styling\spinner.scss" />
+    <Content Include="Content\Fonts\VAG Rounded Bold.ttf" />
+    <Content Include="Content\Styling\buttons.scss" />
+    <Content Include="Content\Styling\_mixins.scss" />
+    <Content Include="Content\Styling\_variables.scss" />
     <None Include="Properties\PublishProfiles\Imibuza.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -273,8 +284,6 @@
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\SendCode.cshtml" />
@@ -290,9 +299,16 @@
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
     <Content Include="Views\Shared\_spinner.cshtml" />
+    <Content Include="Views\Home\Partials\_LoginPage.cshtml" />
+    <Content Include="Views\Home\Partials\_RegisterPage.cshtml" />
+    <Content Include="Views\Home\Partials\_WelcomePage.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Authentication\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

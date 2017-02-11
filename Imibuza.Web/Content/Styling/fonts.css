@@ -7,5 +7,8 @@
 @font-face {
   font-family: 'Roboto Light';
   src: url("/Content/Fonts/Roboto-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: 'VAG Rounded Bold';
+  src: url("/Content/Fonts/VAG Rounded Bold.ttf") format("truetype"); }
 
 /*# sourceMappingURL=fonts.css.map */

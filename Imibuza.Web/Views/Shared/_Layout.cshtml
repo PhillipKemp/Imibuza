@@ -9,7 +9,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     <link href="~/Content/Styling/fonts.css" rel="stylesheet"/>
-
+    <link href="~/Content/Styling/buttons.css" rel="stylesheet" />
 
     <script type = 'text/javascript' >
         var appInsights=window.appInsights||function(config)
@@ -26,12 +26,28 @@
 </head>
 <body>@* @Html.Partial("_Navbar")*@
 
-<div >
-    
+<div id="pageBody" hidden>
     @RenderBody()
 </div>
 
+    <script>
+        $(window).on('load resize', function () {
+            setTimeout(function () {
+                var height = $(window).height();
+                $(".landing-page").height(height);
+            }, 10);
+        });
 
-@RenderSection("scripts", required: false)
+        $(document).ready(function() {
+            $("#pageBody").fadeIn();
+        });
+
+
+    </script>
+    @RenderSection("scripts", required: false)
 </body>
+
+
+
+
 </html>

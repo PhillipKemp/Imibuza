@@ -1,0 +1,35 @@
+﻿@model Imibuza.Web.Models.RegisterViewModel
+
+<div id="register">
+
+    <div class="header">Register</div>
+    <div class="slogan">
+        <img src="~/Content/Images/Slogan.png" />
+    </div>
+    <div class="details" align="center">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "username" })
+                @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "password" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "confirm password" })
+            </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-orange" value="login">
+                </div>
+
+        }
+
+        <label>not registered?</label>
+        <a href="../Account/Login"> register now</a>
+
+    </div>
+</div>

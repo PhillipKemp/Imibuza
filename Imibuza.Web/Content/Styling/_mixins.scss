@@ -1,0 +1,23 @@
+@import '_variables.scss';
+
+@mixin button($color, $fontColor, $width, $float){
+    width: $width;
+    border-radius: 0;
+
+    @if $float{
+        float: $float;
+    }
+
+    
+    height: $button-height !important;
+    border-bottom-left-radius: 100px !important;
+    background-color: $color;
+    font-size: $font-size-main;
+    color: $fontColor;
+    transition: $transition;
+    border: 0;
+    &:hover{
+        background-color: darken($color,10);
+        color: white;
+    }
+}
