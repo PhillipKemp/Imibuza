@@ -26,6 +26,10 @@ namespace Imibuza.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            //Angular is now in the loop!
+
+
         }
     }
 }

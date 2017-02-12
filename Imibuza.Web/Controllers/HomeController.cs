@@ -17,5 +17,20 @@ namespace Imibuza.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult One()
+        {
+            return View();
+        }
+
+        public ActionResult Two()
+        {
+            return View();
+        }
+
+        public ActionResult Three()
+        {
+            return View();
+        }
     }
 }

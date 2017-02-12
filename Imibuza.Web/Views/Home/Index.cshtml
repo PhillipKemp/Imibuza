@@ -1,27 +1,23 @@
-﻿<link href="~/Content/Styling/landing-page.css" rel="stylesheet"/>
-<link href="~/Content/Styling/buttons.css" rel="stylesheet" />
+﻿@{
+    Layout = null;
+}
 
-<div id="landingPage">
-    <div class="landing-page">
+<html ng-app="Imibuza">
+<head>
+    <title ng-bind="models.helloAngular"></title>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap.js"></script>
 
-        <div class="advertizing">
-            <img src="~/Content/Images/Imibuza-Logo-White.png" />
-            <div class="more-about">
-                ('quiz' in Zulu) is our latest initiative to enpower everyone to share knowledge and to learn as they play.
-            </div>
-                    <img src="~/Content/Images/mwabo.png"/> 
-                    <div class="more-about">
-                        Mwabu creates modern interactive e-learning content and resources for African learners
-                    </div>
- 
-                    <form action="../Account/Register">
-                        <input class="btn btn-bubble-black" type="submit" value="register"/>
-                    </form>
-                    <form action="../Account/Login">
-                        <input class="btn btn-bubble-orange" type="submit" value="login"/>
-                    </form>
-                </div>
-           
-            
-        </div>
+    <link href="~/Content/Styling/imibuza.css" rel="stylesheet" />
+    <script src="~/app/Imibuza.js"></script>
+
+    <base href="/" />
+</head>
+<body>
+    <div class="header">
+        <img src="~/Content/Images/Imibuza-Logo-Dark.png" />
     </div>
+    <div class="view" ng-view></div>
+</body>
+</html>
