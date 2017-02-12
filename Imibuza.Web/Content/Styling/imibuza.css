@@ -4,10 +4,41 @@
   right: 0px;
   top: 5px;
   height: 80px;
-  background-color: red;
   padding: 0 20px; }
   .header img {
-    height: 100%; }
+    float: left;
+    height: 100%;
+    margin-right: 50px; }
+  .header .left-menu-item {
+    margin: 0 40px !important;
+    float: left;
+    line-height: 40px;
+    padding: 0 20px;
+    text-align: center; }
+    .header .left-menu-item a {
+      font-family: "Imibuza Main";
+      font-size: 20px;
+      color: #595959;
+      transition: color 0.3s; }
+      .header .left-menu-item a:hover {
+        cursor: pointer;
+        text-decoration: none;
+        color: #F46506; }
+  .header .right-menu-item {
+    margin: 0 40px !important;
+    float: right;
+    line-height: 40px;
+    padding: 0 0 0 20px;
+    text-align: center; }
+    .header .right-menu-item a {
+      font-family: "Imibuza Main";
+      font-size: 20px;
+      color: #595959;
+      transition: color 0.3s; }
+      .header .right-menu-item a:hover {
+        cursor: pointer;
+        text-decoration: none;
+        color: #F46506; }
 
 .view {
   padding-top: 90px; }

@@ -1,0 +1,68 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+
+
+.dashboard{
+    min-height: 200px;
+    overflow: auto;
+    padding: 20px 0;
+    .no-stats-left{
+        @include noStatPanel(50px 0 0 0, url('../Images/Mwabu-transparent.png'));
+       
+    }
+     .no-stats-right{
+        @include noStatPanel(0 0 50px 0, url('../Images/Mwabu-2-transparent.png'));
+       
+    }
+    .create{
+         @include dashboardBanner($color-alternative, 150px, 0);
+         .info{
+             position: relative;
+             text-align: center;
+             color: white;
+             float: left;
+             width: 70%;
+             height: 100%;
+            label{                
+                font-size: $font-size-large;
+                font-family: 'Roboto Light';
+                font-weight: normal;
+                @include centerElement();
+                opacity: 0.9;
+            }
+         }
+         .button{
+            @include banner-button(left, 30%)
+         }
+
+    } 
+    .doquiz{
+         @include dashboardBanner($color-alternative, 150px,0);
+          .info{
+              position: relative;
+             color: white;
+             float: left;
+             width: 50%;
+             height: 100%;
+             text-align: center;
+             padding: 15px;
+             font-family: 'Roboto Light';
+             label{                
+                font-size: $font-size-main;
+                
+                font-weight: normal;
+                opacity: 0.9;
+            }
+             .fun-fact{
+                 margin-top: 5px;
+                 opacity: 0.3
+             }
+         }
+         .button{
+            @include banner-button(left, 50%)
+         }
+    } 
+
+    
+}

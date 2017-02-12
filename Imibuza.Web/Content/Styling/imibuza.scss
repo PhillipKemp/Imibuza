@@ -1,14 +1,46 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+@mixin menu-item($float, $padding){
+    margin: 0 40px !important;
+    float: $float;
+    line-height: 40px;
+    padding: $padding;
+    text-align: center;
+    a{
+            
+        font-family: "Imibuza Main";
+        font-size: $font-size-large;
+        color: $color-alternative;
+        transition: color 0.3s;
+        &:hover{
+            cursor: pointer;
+            text-decoration: none;
+            color: $color-main;
+        }
+    }
+}
+
 .header{
     position: absolute;
     left: 0px;
     right: 0px;
     top: 5px;
     height: 80px;
-    background-color: red;
     padding: 0 20px;
+    
     img{
+        float: left;
         height: 100%;
+        margin-right: 50px;
     }
+    .left-menu-item{
+        @include menu-item(left, 0 20px)
+    }
+        .right-menu-item{
+        @include menu-item(right, 0 0 0 20px)
+    }
+    
 }
 
 .view{

@@ -21,3 +21,67 @@
         color: white;
     }
 }
+
+@mixin dashboardBanner($color, $height, $borderRadius){
+    position: relative;
+    background-color: $color;
+        width: 100%;
+        height: $height;
+        margin: 25px 0;
+        border-radius:$borderRadius;
+}
+
+@mixin centerElement(){
+      position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%)
+}
+
+@mixin banner-button($float, $width){
+    position: relative;
+    float: $float;
+    width: $width;
+    height: 100%;
+    background-color: $color-main;
+    transition: background-color 0.3s;
+    &:hover{
+        cursor: pointer;
+        background-color: lighten($color-main, 5)
+    }
+    img{
+        width: 50%;
+        @include centerElement();
+    }
+}
+
+@mixin noStatPanel($borderRadius, $background){
+    position: relative;
+        @include dashboardBanner(lighten($color-alternative,60), 360px, $borderRadius);
+        background-image: $background;
+        background-repeat: no-repeat;
+        background-position: left bottom; 
+        background-size: cover;
+
+        div{
+            padding: 10px;
+            max-width: 400px;
+            width: 80%;
+            text-align: center;
+            
+             img{
+                 @include centerElement();
+                  width: 150px;
+                  opacity: 0.3;
+            }
+
+                 label{
+                     @include centerElement();
+                     opacity: 1;
+                     font-family: 'Roboto Thin';
+                     font-size: $font-size-large;
+                     color: $color-alternative;
+                 }
+
+        }
+}

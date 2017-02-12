@@ -216,13 +216,24 @@
     <Content Include="app\Imibuza.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Calendar.png" />
+    <Content Include="Content\Images\Chart.png" />
+    <Content Include="Content\Images\CreateAQuestion.png" />
     <Content Include="Content\Images\Imibuza-Logo-Dark.png" />
     <Content Include="Content\Images\Imibuza-Logo-White.png" />
     <Content Include="Content\Images\LandingPage.jpg" />
     <Content Include="Content\Images\mwabo.png" />
+    <Content Include="Content\Images\mwabu-1.jpg" />
+    <Content Include="Content\Images\Mwabu-2-transparent.png" />
+    <Content Include="Content\Images\mwabu-2.png" />
+    <Content Include="Content\Images\Mwabu-transparent.png" />
     <Content Include="Content\Images\Slogan.png" />
+    <Content Include="Content\Images\StartQuiz.png" />
     <Content Include="Content\Styling\buttons.css">
       <DependentUpon>buttons.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Styling\dashboard.css">
+      <DependentUpon>dashboard.scss</DependentUpon>
     </Content>
     <Content Include="Content\Styling\fonts.css">
       <DependentUpon>fonts.scss</DependentUpon>
@@ -241,6 +252,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-aria.js" />
+    <Content Include="Scripts\angular-aria.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
@@ -267,9 +282,12 @@
     <Content Include="Content\Styling\_variables.scss" />
     <Content Include="app\Home.cshtml" />
     <Content Include="Content\Styling\imibuza.scss" />
+    <Content Include="Content\Styling\dashboard.scss" />
     <None Include="Properties\PublishProfiles\Imibuza.pubxml" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="Scripts\angular-aria.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
