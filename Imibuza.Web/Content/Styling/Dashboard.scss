@@ -24,6 +24,7 @@
              float: left;
              width: 70%;
              height: 100%;
+             transition: all 0.3s;
             label{                
                 font-size: $font-size-large;
                 font-family: 'Roboto Light';
@@ -31,10 +32,22 @@
                 @include centerElement();
                 opacity: 0.9;
             }
+
          }
          .button{
             @include banner-button(left, 30%)
          }
+
+         &:hover{
+                cursor: pointer;
+                .button{
+                     background-color: $color-selection !important;
+                }
+                .info{
+                     background-color: lighten($color-alternative, 5) !important;
+                }
+               
+            }
 
     } 
     .doquiz{
@@ -48,6 +61,7 @@
              text-align: center;
              padding: 15px;
              font-family: 'Roboto Light';
+             transition: all 0.3s;
              label{                
                 font-size: $font-size-main;
                 
@@ -62,6 +76,17 @@
          .button{
             @include banner-button(left, 50%)
          }
+
+          &:hover{
+                cursor: pointer;
+                .button{
+                     background-color: $color-selection !important;
+                }
+                .info{
+                     background-color: lighten($color-alternative, 5) !important;
+                }
+               
+            }
     } 
 
     

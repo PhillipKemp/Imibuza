@@ -1,6 +1,6 @@
 @import '_variables.scss';
 
-@mixin button($color, $fontColor, $width, $float){
+@mixin button($color, $fontColor, $width, $float, $borderRadius){
     width: $width;
     border-radius: 0;
 
@@ -10,7 +10,7 @@
 
     
     height: $button-height !important;
-    border-bottom-left-radius: 100px !important;
+    border-radius: $borderRadius !important;
     background-color: $color;
     font-size: $font-size-main;
     color: $fontColor;
@@ -45,10 +45,7 @@
     height: 100%;
     background-color: $color-main;
     transition: background-color 0.3s;
-    &:hover{
-        cursor: pointer;
-        background-color: lighten($color-main, 5)
-    }
+   
     img{
         width: 50%;
         @include centerElement();
@@ -62,26 +59,42 @@
         background-repeat: no-repeat;
         background-position: left bottom; 
         background-size: cover;
-
         div{
             padding: 10px;
             max-width: 400px;
             width: 80%;
             text-align: center;
-            
              img{
                  @include centerElement();
                   width: 150px;
                   opacity: 0.3;
             }
-
-                 label{
-                     @include centerElement();
-                     opacity: 1;
-                     font-family: 'Roboto Thin';
-                     font-size: $font-size-large;
-                     color: $color-alternative;
-                 }
-
+            label{
+                @include centerElement();
+                opacity: 1;
+                font-family: 'Roboto Thin';
+                font-size: $font-size-large;
+                color: $color-alternative;
+            }
         }
+}
+
+@mixin menu-item($float, $padding, $color){
+    margin: 0 40px !important;
+    float: $float;
+    line-height: 80px;
+    padding: $padding;
+    text-align: center;
+    a{
+            
+        font-family: "Imibuza Main";
+        font-size: $font-size-large;
+        color: $color;
+        transition: color 0.3s;
+        &:hover{
+            cursor: pointer;
+            text-decoration: none;
+            color: $color-main;
+        }
+    }
 }

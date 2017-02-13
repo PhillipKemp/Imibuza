@@ -2,11 +2,11 @@
 @import '_variables.scss'; 
 
 .btn-black{
-    @include button($color-text, white, 100%, null)
+    @include button($color-text, white, 100%, null, 0 0 0 100px)
 }
 
 .btn-orange{
-    @include button($color-main, white, 100%, null)
+    @include button($color-main, white, 100%, null,  0 0 0 100px)
 }
 
 .btn-bubble-black{

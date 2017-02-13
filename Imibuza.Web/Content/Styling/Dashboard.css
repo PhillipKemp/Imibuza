@@ -81,7 +81,8 @@
       color: white;
       float: left;
       width: 70%;
-      height: 100%; }
+      height: 100%;
+      transition: all 0.3s; }
       .dashboard .create .info label {
         font-size: 20px;
         font-family: 'Roboto Light';
@@ -98,15 +99,18 @@
       height: 100%;
       background-color: #F46506;
       transition: background-color 0.3s; }
-      .dashboard .create .button:hover {
-        cursor: pointer;
-        background-color: #f9731a; }
       .dashboard .create .button img {
         width: 50%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); }
+    .dashboard .create:hover {
+      cursor: pointer; }
+      .dashboard .create:hover .button {
+        background-color: #009ACE !important; }
+      .dashboard .create:hover .info {
+        background-color: #666666 !important; }
   .dashboard .doquiz {
     position: relative;
     background-color: #595959;
@@ -122,7 +126,8 @@
       height: 100%;
       text-align: center;
       padding: 15px;
-      font-family: 'Roboto Light'; }
+      font-family: 'Roboto Light';
+      transition: all 0.3s; }
       .dashboard .doquiz .info label {
         font-size: 16px;
         font-weight: normal;
@@ -137,14 +142,17 @@
       height: 100%;
       background-color: #F46506;
       transition: background-color 0.3s; }
-      .dashboard .doquiz .button:hover {
-        cursor: pointer;
-        background-color: #f9731a; }
       .dashboard .doquiz .button img {
         width: 50%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); }
+    .dashboard .doquiz:hover {
+      cursor: pointer; }
+      .dashboard .doquiz:hover .button {
+        background-color: #009ACE !important; }
+      .dashboard .doquiz:hover .info {
+        background-color: #666666 !important; }
 
 /*# sourceMappingURL=dashboard.css.map */

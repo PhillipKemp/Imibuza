@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
-namespace Imibuza.Web.Controllers
+namespace Imibuza.Web.Models
 {
     public class HomeController : Controller
     {
@@ -31,6 +27,11 @@ namespace Imibuza.Web.Controllers
         public ActionResult Three()
         {
             return View();
+        }
+
+        public JsonResult CreateQuestion(QuestionModel model)
+        {
+            return new JsonResult();
         }
     }
 }

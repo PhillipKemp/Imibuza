@@ -4,12 +4,13 @@
 
 <html ng-app="Imibuza">
 <head>
-    <title ng-bind="models.helloAngular"></title>
+   @* <title ng-bind="models.helloAngular"></title>*@
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/angular-route.js"></script>
     <script src="~/Scripts/angular-ui/ui-bootstrap.js"></script>
     <script src="~/Scripts/angular-animate.js"></script>
     <script src="~/Scripts/angular-aria.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
 
     <link href="~/Content/Styling/fonts.css" rel="stylesheet"/>
@@ -20,17 +21,18 @@
     <base href="/" />
 </head>
 <body>
-    <div class="header">
+    <header class="header">
         <img src="~/Content/Images/Imibuza-Logo-Dark.png"/>
         <div class="left-menu-item">
-            <a>Home</a>
+            <a href="/">Home</a>
         </div>
 
         <div class="right-menu-item">
             <a>logoff</a>
         </div>
 
-    </div>
-    <div class="view" ng-view></div>
+    </header>
+<div class="view" ng-view></div>
+
 </body>
 </html>

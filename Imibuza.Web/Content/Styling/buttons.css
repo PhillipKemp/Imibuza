@@ -2,7 +2,7 @@
   width: 100%;
   border-radius: 0;
   height: 50px !important;
-  border-bottom-left-radius: 100px !important;
+  border-radius: 0 0 0 100px !important;
   background-color: #282828;
   font-size: 16px;
   color: white;
@@ -16,7 +16,7 @@
   width: 100%;
   border-radius: 0;
   height: 50px !important;
-  border-bottom-left-radius: 100px !important;
+  border-radius: 0 0 0 100px !important;
   background-color: #F46506;
   font-size: 16px;
   color: white;
