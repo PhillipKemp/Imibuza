@@ -1,20 +1,18 @@
 ﻿<link href="~/Content/Styling/do-quiz.css" rel="stylesheet" />
 
 
-<div ng-controller="DoQuizController" align="center">
+<div class="background" ng-controller="DoQuizController" align="center">
     <div class="quiz">
-        <div class="quiz-header">Technology</div>
-        <div class="question">Who was the 2nd US president?</div>
+        <div class="quiz-header">{{quiz.category}}</div>
+        <div class="question">{{quiz.question}}</div>
         
-       @* <label>Choose the correct answer</label>*@
+        <div ng-repeat="answer in quiz.answers">
+            <selection answer="answer" source="quiz.answers" submit="submitAnswer()"></selection>
+        </div>
         
-        <div class="option">Donald Trump</div>
-        <div class="option">Jacob Zuma</div>
-        <div class="option">Mickey Mouse</div>
-        <div class="option">None</div>
-        
-        <button class="left-button">cancel</button>
-        <button class="right-button">next</button>
+        <div class="message">{{result}}</div>
+       
+        <button class="cancel-button" ng-click="cancel()">cancel</button>
     </div>
 
 </div>

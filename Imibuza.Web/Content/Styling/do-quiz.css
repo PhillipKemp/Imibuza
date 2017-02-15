@@ -1,44 +1,56 @@
 .quiz {
   width: 80%;
   max-width: 500px;
-  min-height: 300px; }
+  min-height: 300px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 25px; }
   .quiz .quiz-header {
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
+    width: 70%;
+    height: 40px;
+    line-height: 40px;
     font-family: "Imibuza Main";
-    font-size: 30px;
-    background: -webkit-linear-gradient(bottom, rgba(89, 89, 89, 0.6), #595959);
+    font-size: 20px;
+    background: -webkit-linear-gradient(bottom, #db5b05, rgba(219, 91, 5, 0.6));
     color: white;
-    border-radius: 0 0 100px 100px;
-    margin-bottom: 50px; }
-  .quiz label {
-    margin-top: 10px;
-    width: 100%;
-    font-family: "Roboto Thin";
-    font-size: 20px; }
+    border-radius: 100px 100px 0 0;
+    margin-bottom: 1px; }
   .quiz .question {
     padding: 30px 10px;
-    font-size: #F46506;
+    color: white;
     width: 100%;
-    margin-top: 10px;
     min-height: 50px;
-    background-color: #C9C9C9;
+    background-color: #F46506;
     font-size: 20px;
     margin-bottom: 30px;
     border-radius: 25px; }
   .quiz .option {
     line-height: 35px;
     font-size: 16px;
-    width: 100%;
+    width: 90%;
     height: 35px;
     margin: 12px 0;
-    background-color: #e3e3e3;
-    transition: all 0.3s; }
+    background-color: white;
+    transition: all 0.3s;
+    border-radius: 10px;
+    border: 1px solid #c1c1c1; }
     .quiz .option:hover {
       cursor: pointer;
       background-color: #009ACE;
       color: white; }
+  .quiz .message {
+    margin-top: 30px;
+    width: 100%;
+    min-height: 20px;
+    background-color: #F46506;
+    width: 90%;
+    border-radius: 0 0 25px 25px;
+    line-height: 50px;
+    font-size: 16px;
+    color: white;
+    transition: all 0.5s; }
+  .quiz .selectedQuestion {
+    background-color: orangered;
+    color: white; }
   .quiz .left-button {
     width: 49%;
     border-radius: 0;
@@ -67,5 +79,27 @@
     .quiz .right-button:hover {
       background-color: #c25005;
       color: white; }
+  .quiz .cancel-button {
+    margin-top: 30px;
+    border: 0;
+    background-color: transparent;
+    padding: 8px 30px;
+    transition: all 0.3s; }
+    .quiz .cancel-button:hover {
+      background-color: #EF3340;
+      border-radius: 0 0 20px 20px;
+      color: white; }
+
+.activated {
+  line-height: 35px;
+  font-size: 16px;
+  width: 100%;
+  height: 35px;
+  margin: 12px 0;
+  background-color: #009ACE;
+  color: white;
+  transition: all 0.3s; }
+  .activated:hover {
+    cursor: pointer; }
 
 /*# sourceMappingURL=do-quiz.css.map */
