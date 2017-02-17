@@ -26,13 +26,9 @@ namespace Imibuza.Repositories
 
         public List<SubmittedAnswer> GetAll(string userId)
         {
-            //if(_defaultConnection.UserAnswers.Local.Count == 0)
-            //    return new List<SubmittedAnswer>();
-            //
-            //var results = _defaultConnection.UserAnswers.Where(i => i.UserId == userId).ToList();
-            //return results.OrderByDescending(i => i.CreatedOn).ToList();
+            var results = _defaultConnection.UserAnswers.Where(i => i.UserId == userId).ToList();
+            return results.OrderByDescending(i => i.CreatedOn).ToList();
 
-            return new List<SubmittedAnswer>();
         }
     }
 }

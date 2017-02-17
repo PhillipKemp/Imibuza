@@ -30,18 +30,27 @@
     <base href="/" />
 </head>
 <body>
-    <header class="header">
-        <img src="~/Content/Images/Imibuza-Logo-Dark.png"/>
-        <div class="left-menu-item">
-            <a href="/">Home</a>
-        </div>
+<header class="header">
+    <img src="~/Content/Images/Imibuza-Logo-Dark.png"/>
+    <div class="left-menu-item">
+        <a href="/">Home</a>
+    </div>
 
-        <div class="right-menu-item">
-            <a>logoff</a>
-        </div>
+    <div class="right-menu-item">
+        <a id="logoffButton">logoff</a>
+    </div>
 
-    </header>
+</header>
 <div class="view" ng-view></div>
 
+<script>
+    $("#logoffButton").click(function () {
+        window.location = '@Url.Action("LogOff", "Account")';
+    });
+
+</script>
+
 </body>
+
+
 </html>

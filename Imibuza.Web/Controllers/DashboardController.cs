@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Imibuza.Domain;
 using Imibuza.Services;
+using Imibuza.Web.Models;
 using Microsoft.AspNet.Identity;
 
 namespace Imibuza.Web.Controllers
@@ -27,35 +28,23 @@ namespace Imibuza.Web.Controllers
                 Data = model
             };
         }
-    }
 
-    public class TimelineModel
-    {
-        public static TimelineModel FromDomain(Timeline timeline)
+        public JsonResult GetProfile()
         {
-            return new TimelineModel
+            var userId = User.Identity.GetUserId();
+
+            var service = new QuestionService();
+
+            var profile = service.GetProfile(userId);
+
+            return new JsonResult
             {
-                Entries = timeline.Entries.Select(TimelineEntryModel.FromDomain).ToList()
-            };
-        }
-
-        public List<TimelineEntryModel> Entries { get; set; }
-    }
-
-    public class TimelineEntryModel
-    {
-        public string Question { get; set; }
-        public bool Correct { get; set; }
-        public DateTime CompletedOn { get; set; }
-
-        public static TimelineEntryModel FromDomain(TimelineEntry timelineEntry)
-        {
-            return new TimelineEntryModel
-            {
-               Question = timelineEntry.Question,
-               Correct = timelineEntry.Correct,
-               CompletedOn = timelineEntry.CompletedOn
+                Data = ProfileModel.FromDomain(profile)
             };
         }
     }
+
+   
+
+   
 }

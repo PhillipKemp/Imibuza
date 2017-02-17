@@ -35,29 +35,21 @@ app.controller("HomeController", function ($scope, $location, $http) {
         $location.path("/ReadySetGoQuiz");
     }
 
-    $scope.events = [
-    //    {
-    //    title: "Who was the 5th US president?",
-    //    when: "11 hours ago via Twitter",
-    //}
-    ];
+    $scope.events = [];
 
-    // optional: not mandatory (uses angular-scroll-animate)
-    $scope.animateElementIn = function ($el) {
-        $el.removeClass('timeline-hidden');
-        $el.addClass('bounce-in');
-    };
-
-    // optional: not mandatory (uses angular-scroll-animate)
-    $scope.animateElementOut = function ($el) {
-        $el.addClass('timeline-hidden');
-        $el.removeClass('bounce-in');
-    };
+    $scope.strengths = [];
+    $scope.weaknesses = [];
 
     $scope.init = function() {
         $http.post("Dashboard/GetTimeline", {}).then(function (response) {
-            $scope.events = response.data;
+            $scope.events = response.data.Entries;
         });
+
+        $http.post("Dashboard/GetProfile", {}).then(function (response) {
+            $scope.strengths = response.data.Strengths;
+            $scope.weaknesses = response.data.Weaknesses;
+        });
+
     }
 
     $scope.init();

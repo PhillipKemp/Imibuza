@@ -24,6 +24,8 @@ namespace Imibuza.Web.Controllers
             };
         }
 
+
+
         public JsonResult Create(QuestionModel model)
         {
             var question = model.ToDomain();

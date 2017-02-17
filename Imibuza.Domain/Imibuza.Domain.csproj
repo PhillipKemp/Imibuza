@@ -41,9 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\CategoriesEnum.cs" />
+    <Compile Include="Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs" />
     <Compile Include="QuestionModel.cs" />
+    <Compile Include="Result.cs" />
     <Compile Include="SubmittedAnswer.cs" />
     <Compile Include="Timeline.cs" />
     <Compile Include="TimelineEntry.cs" />

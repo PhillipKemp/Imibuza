@@ -12,8 +12,7 @@
                             <img src="~/Content/Images/StartQuiz.png" />
                         </div>
                         <div class="info">
-                            <label>You have answered <strong>0</strong> questions</label>
-                            <label>Your result: <strong>0%</strong></label>
+                           
                             <div class="fun-fact">
                                 It is a scientific fact that doing quizes are like lifting weights with your brain!
                             </div>
@@ -32,42 +31,26 @@
                 </div>
                 
                 <div class="no-stats-left">
-                    @*<div>
-                 <label> start doing quizes and see where your strengths are</label>
-            </div>*@
-                    <div class="stats">
+                    <div class="no-data-small" ng-show="strengths.length == 0 && weaknesses.length == 0 ">
+                        <img src="~/Content/Images/Chart.png" />
+                        <label>We will track your strenghts and weaknesses here</label>
+                    </div>
+                    <div class="stats" ng-show="strengths.length > 0 || weaknesses.length > 0 ">
                         <div class="stats-header">
                             strength & weakness
                         </div>
-                        <div class="strengths">
+                        <div class="strengths" ng-repeat="strength in strengths">
                             <div>
-                                <div class="stats-loader">Technology</div>
-                                <label>score: 89/10 (92%)</label>
+                                <div class="stats-loader" ng-style="{ 'width' : strength.Percentage + '%' }">{{strength.Category}}</div>
+                                <label>{{strength.Value}}</label>
                             </div>
+                           </div>
+                        <div class="weakness" ng-repeat="weakness in weaknesses">
                             <div>
-                                <div class="stats-loader">Technology</div>
-                                <label>score: 89/10 (92%)</label>
+                                <div class="stats-loader" ng-style="{ 'width' : strength.Percentage + '%'  }">{{weakness.Category}}</div>
+                                <label>{{weakness.Value}}</label>
                             </div>
-                            <div>
-                                <div class="stats-loader">Technology</div>
-                                <label>score: 89/10 (92%)</label>
-                            </div>
-                        </div>
-                        <div class="weakness">
-                            <div>
-                                <div class="stats-loader">Biology</div>
-                                <label>score: 89/10 (92%)</label>
-                            </div>
-                            <div>
-                                <div class="stats-loader">Biology</div>
-                                <label>score: 89/10 (92%)</label>
-                            </div>
-                            <div>
-                                <div class="stats-loader">Biology</div>
-                                <label>score: 89/10 (92%)</label>
-                            </div>
-
-                        </div>
+                           </div>
                     </div>
 
 
@@ -78,7 +61,7 @@
                
                 <div class="no-stats-right">
                     <div>
-                        <div class="no-data">
+                        <div class="no-data"ng-show="events.length == 0">
                             <img src="~/Content/Images/Calendar.png" />
                             <label>As soon as you start, you can view your history here</label>
                         </div>
@@ -90,23 +73,14 @@
 
                                 </timeline-badge>
 
-                                <timeline-panel class="{{event.badgeClass}}"
-                                                when-visible="animateElementIn" when-not-visible="animateElementOut">
+                                <timeline-panel when-visible="animateElementIn" when-not-visible="animateElementOut">
                                     <timeline-heading>
-                                        <h5>{{event.title}}</h5>
-                                        <p ng-if="event.when">
-                                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{event.when}}</small>
-                                        </p>
-                                        <p ng-if="event.titleContentHtml" ng-bind-html="event.titleContentHtml">
+                                        <h5>{{event.Question}}</h5>
+                                        <p ng-if="event.CompletedOn">
+                                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{event.CompletedOn}}</small>
                                         </p>
                                     </timeline-heading>
-                                    <p ng-bind-html="event.contentHtml"></p>
-                                    <timeline-footer ng-if="event.footerContentHtml">
-                                        <span ng-bind-html="event.footerContentHtml"></span>
-                                    </timeline-footer>
                                 </timeline-panel>
-
-
                             </timeline-event>
                         </timeline>
 
