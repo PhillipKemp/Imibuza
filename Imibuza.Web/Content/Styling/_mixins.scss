@@ -137,12 +137,12 @@
     margin: 0 10px !important;
     float: $float;
     line-height: 80px;
-    padding: $padding;
+    //padding: $padding;
     text-align: center;
     a{
             
         font-family: "Imibuza Main";
-        font-size: $font-size-large;
+        font-size: $font-size-main;
         color: $color;
         transition: color 0.3s;
         &:hover{

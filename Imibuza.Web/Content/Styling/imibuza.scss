@@ -24,7 +24,7 @@
         @include menu-item(left, 0 10px, $color-alternative)
     }
         .right-menu-item{
-        @include menu-item(right, 0 0 0 20px, $color-alternative)
+        @include menu-item(right, 0 0 0 10px, $color-alternative)
     }
     
 }

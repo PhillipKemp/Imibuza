@@ -17,11 +17,10 @@
     margin: 0 10px !important;
     float: left;
     line-height: 80px;
-    padding: 0 10px;
     text-align: center; }
     .header .left-menu-item a {
       font-family: "Imibuza Main";
-      font-size: 20px;
+      font-size: 16px;
       color: #262626;
       transition: color 0.3s; }
       .header .left-menu-item a:hover {
@@ -32,11 +31,10 @@
     margin: 0 10px !important;
     float: right;
     line-height: 80px;
-    padding: 0 0 0 20px;
     text-align: center; }
     .header .right-menu-item a {
       font-family: "Imibuza Main";
-      font-size: 20px;
+      font-size: 16px;
       color: #262626;
       transition: color 0.3s; }
       .header .right-menu-item a:hover {

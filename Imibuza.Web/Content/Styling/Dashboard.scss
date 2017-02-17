@@ -24,7 +24,7 @@
              height: 100%;
              transition: all 0.3s;
             label{                
-                font-size: $font-size-large;
+                font-size: $font-size-main;
                 font-family: 'Roboto Light';
                 font-weight: normal;
                 @include centerElement();
@@ -55,7 +55,7 @@
              width: 50%;
              height: 100%;
              text-align: center;
-             padding: 15px;
+             padding: 6px;
              font-family: 'Roboto Light';
              transition: all 0.3s;
              label{                
