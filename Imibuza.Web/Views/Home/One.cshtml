@@ -1,14 +1,40 @@
 ﻿<link href="~/Content/Styling/dashboard.css" rel="stylesheet"/>
 
-<div ng-controller="HomeController">
+<div class="background" ng-controller="HomeController">
 
     <div class="dashboard">
         <div class="col-md-12">
-            <div class="col-md-6">
+            <div class="col-md-7">
+                
+                <div class="col-md-12">
+                    <div class="doquiz" ng-click="doQuiz()">
+                        <div class="button">
+                            <img src="~/Content/Images/StartQuiz.png" />
+                        </div>
+                        <div class="info">
+                            <label>You have answered <strong>0</strong> questions</label>
+                            <label>Your result: <strong>0%</strong></label>
+                            <div class="fun-fact">
+                                It is a scientific fact that doing quizes are like lifting weights with your brain!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="create" ng-click="createQuiz()">
+                        <div class="info">
+                            <label>Do you know something that you want other to know?</label>
+
+                        </div>
+                        <div class="button">
+                            <img src="~/Content/Images/CreateAQuestion.png" />
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="no-stats-left">
                     @*<div>
-                         <label> start doing quizes and see where your strengths are</label>
-                    </div>*@
+                 <label> start doing quizes and see where your strengths are</label>
+            </div>*@
                     <div class="stats">
                         <div class="stats-header">
                             strength & weakness
@@ -44,42 +70,51 @@
                         </div>
                     </div>
 
-                    
+
                 </div>
-                <div class="doquiz" ng-click="doQuiz()">
-                    <div class="button" >
-                        <img src="~/Content/Images/StartQuiz.png" />
-                    </div>
-                    <div class="info">
-                        <label>You have answered <strong>0</strong> questions</label>
-                        <label>Your result: <strong>0%</strong></label>
-                        <div class="fun-fact">
-                            It is a scientific fact that doing quizes are like lifting weights with your brain!
-                        </div>
-                    </div>
-                </div>
+
             </div>
-            <div class="col-md-6">
-                <div class="create" ng-click="createQuiz()">
-                    <div class="info">
-                        <label>Do you know something that you want other to know?</label>
-                        
-                    </div>
-                    <div class="button" >
-                        <img src="~/Content/Images/CreateAQuestion.png"/>
-                    </div>
-                </div>
+            <div class="col-md-5">
+               
                 <div class="no-stats-right">
                     <div>
-                            <label>As soon as you start, we will show you what you were up to</label>
+                        <div class="no-data">
+                            <img src="~/Content/Images/Calendar.png" />
+                            <label>As soon as you start, you can view your history here</label>
+                        </div>
                         
+
+                        <timeline ng-show="events.length > 0">
+                            <timeline-event ng-repeat="event in events">
+                                <timeline-badge when-visible="animateElementIn" when-not-visible="animateElementOut">
+
+                                </timeline-badge>
+
+                                <timeline-panel class="{{event.badgeClass}}"
+                                                when-visible="animateElementIn" when-not-visible="animateElementOut">
+                                    <timeline-heading>
+                                        <h5>{{event.title}}</h5>
+                                        <p ng-if="event.when">
+                                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{event.when}}</small>
+                                        </p>
+                                        <p ng-if="event.titleContentHtml" ng-bind-html="event.titleContentHtml">
+                                        </p>
+                                    </timeline-heading>
+                                    <p ng-bind-html="event.contentHtml"></p>
+                                    <timeline-footer ng-if="event.footerContentHtml">
+                                        <span ng-bind-html="event.footerContentHtml"></span>
+                                    </timeline-footer>
+                                </timeline-panel>
+
+
+                            </timeline-event>
+                        </timeline>
+
                     </div>
                     
                 </div>
+                
             </div>
-
-
-
         </div>
     </div>
     </div>

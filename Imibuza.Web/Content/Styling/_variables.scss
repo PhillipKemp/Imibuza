@@ -2,8 +2,10 @@ $navHeight: 70px;
 
 
 $color-main: #F46506;
-$color-alternative: #595959;
-$color-selection: #009ACE;
+$color-alternative: darken(#595959,20);
+$color-selection: #2E86AB;
+$color-success: #44D62C;
+$color-failure: #FF6978;
 
 $color-text: #282828;
 $color-text-rgba: rgba(40, 40, 40, 0.4);

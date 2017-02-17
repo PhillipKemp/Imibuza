@@ -1,9 +1,16 @@
 using System.Web.Mvc;
 
-namespace Imibuza.Web.Models
+namespace Imibuza.Web.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
+
+        public ActionResult LandingPage()
+        {
+            return View();
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -29,9 +36,6 @@ namespace Imibuza.Web.Models
             return View();
         }
 
-        public JsonResult CreateQuestion(QuestionModel model)
-        {
-            return new JsonResult();
-        }
+
     }
 }

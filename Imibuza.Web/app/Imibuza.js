@@ -1,7 +1,10 @@
 ﻿var app = angular.module("Imibuza",
     [
         "ngRoute",
-        "directives"
+        "ngSanitize",
+        "directives",
+        "ui.router",
+        "angular-timeline"
     ]
 );
 
@@ -10,23 +13,20 @@
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider.when("/", {
         templateUrl: "Home/One",
-        controller: "HomeController"
     });
 
     $routeProvider.when("/YouAreNowCreatingAQuiz", {
         templateUrl: "Home/Two",
-        controller: "CreateQuizController"
     });
 
     $routeProvider.when("/ReadySetGoQuiz", {
         templateUrl: "Home/Three",
-        controller: "DoQuizController"
     });
 
     $locationProvider.html5Mode(true);
 });
 
-app.controller("HomeController", function ($scope, $location) {
+app.controller("HomeController", function ($scope, $location, $http) {
     $scope.createQuiz = function createQuiz() {
         $location.path("/YouAreNowCreatingAQuiz");
     };
@@ -34,75 +34,105 @@ app.controller("HomeController", function ($scope, $location) {
     $scope.doQuiz = function doQuiz() {
         $location.path("/ReadySetGoQuiz");
     }
-});
 
-app.controller("CreateQuizController", function ($scope, $http) {
-    $scope.newQuestion = {
-        question : "",
-        correctAnswer : "",
-        firstWrongAnswer : "",
-        secondWrongAnswer : "",
-        thirdWrongAnswer : ""
-    }
-
-    $scope.categories = [
-        {name : "Biology"},
-        {name : "Archeology"},
-        {name : "Technology"}
+    $scope.events = [
+    //    {
+    //    title: "Who was the 5th US president?",
+    //    when: "11 hours ago via Twitter",
+    //}
     ];
 
+    // optional: not mandatory (uses angular-scroll-animate)
+    $scope.animateElementIn = function ($el) {
+        $el.removeClass('timeline-hidden');
+        $el.addClass('bounce-in');
+    };
+
+    // optional: not mandatory (uses angular-scroll-animate)
+    $scope.animateElementOut = function ($el) {
+        $el.addClass('timeline-hidden');
+        $el.removeClass('bounce-in');
+    };
+
+    $scope.init = function() {
+        $http.post("Dashboard/GetTimeline", {}).then(function (response) {
+            $scope.events = response.data;
+        });
+    }
+
+    $scope.init();
+});
+
+app.controller("CreateQuizController", function ($scope, $http, $location) {
+
+    $scope.loading = false;
+    $scope.categories = [];
+
+    $scope.newQuestion = {
+        question: "",
+        correctAnswer: "",
+        firstWrongAnswer: "",
+        secondWrongAnswer: "",
+        thirdWrongAnswer: "",
+        selectedCategory: ""
+    };
+
+    $scope.reset = function() {
+        $scope.newQuestion = {
+            question: "",
+            correctAnswer: "",
+            firstWrongAnswer: "",
+            secondWrongAnswer: "",
+            thirdWrongAnswer: "",
+            selectedCategory: ""
+        };
+    }
+
     $scope.addAnother = function () {
-        var result = $http.post("Home/CreateQuestion", { model: $scope.newQuestion }).then(function (response) {
-
-            var x = response;
-
+        $http.post("Question/Create", { model: $scope.newQuestion }).then(function (response) {
+            $scope.reset();
         });
     }
 
     $scope.addOne = function () {
-        var result = $http.post("Home/CreateQuestion", { model: $scope.newQuestion }).then(function (response) {
-
-            var x = response;
-
+        $http.post("Question/Create", { model: $scope.newQuestion }).then(function (response) {
+            $location.path("/");
         });
     }
 
     $scope.init = function() {
-        
+        $http.post("Question/GetCategories", {}).then(function (response) {
+            $scope.categories = response.data;
+        });
     }
 
     $scope.init();
 });
 
 app.controller("DoQuizController",
-    function ($scope, $location, $http) {
-
-        $scope.quiz = {
-            category : "Politics",
-            question : "Who was the 10th US president?",
-            answers : [
-            { text: "Donald Trump", checked: false },
-            { text: "Aliens", checked: false },
-            { text: "Bill Bob Thornton", checked: false },
-            { text: "ALloy Wheels", checked: false }]
-        }
-
+    function ($scope, $location, $http, $timeout) {
+        $scope.loading = true;
+        $scope.quiz = {};
         $scope.result = "";
 
-        $scope.reset = function() {
-            var result = $http.post("Question/GetNext", {}).then(function (response) {
+        $scope.reset = function () {
+            $scope.loading = true;
+            $timeout(function () {
+                $http.post("Question/GetNext", {}).then(function (response) {
+                    $scope.quiz = response.data;
+                    $scope.loading = false;
+                });
+            }, 1000);
 
-              
 
-            });
+           
         }
 
-        $scope.submitAnswer = function () {
-            var result = $http.post("Question/SubmitAnswer", {}).then(function (response) {
-                //if (response)
-                    //$scope.result = "Correct!";
-                //else
-                    //$scope.result = "Wrong!";
+        $scope.submitAnswer = function (data) {
+            $scope.loading = true;
+            $http.post("Question/SubmitAnswer", { Id: $scope.quiz.Id, Answer: data }).then(function (response) {
+
+                $scope.reset();
             });
         }
 
@@ -110,11 +140,11 @@ app.controller("DoQuizController",
             $location.path("/");
         }
 
-        $scope.init = function () {
-            alert("init");
+        $scope.initController = function () {
+            $scope.reset();
         }
 
-        $scope.init();
+        $scope.initController();
     });
 
 angular.module("directives", []).directive("selection",
@@ -127,7 +157,7 @@ angular.module("directives", []).directive("selection",
                 submit: "&"
             },
 
-            template: "<div class='option'>{{answer.text}}</div>",
+            template: "<div class='option'>{{answer}}</div>",
             link: function (scope, element, attrs) {
                 element.bind('click', function (e) {
                     scope.submit();

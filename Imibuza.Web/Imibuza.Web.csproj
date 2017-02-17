@@ -199,7 +199,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="CustomAuth\CustomUserManager.cs" />
     <Compile Include="CustomAuth\CustomUserSore.cs" />
     <Compile Include="CustomAuth\OldSystemPasswordHasher.cs" />
@@ -207,10 +206,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\HomeController.cs" />
+    <Compile Include="Models\AskingQuestionModel.cs" />
+    <Compile Include="Models\CategoriesModel.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\QuestionModel.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
+    <Compile Include="Models\SubmitModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -218,20 +221,19 @@
     <Content Include="app\Imibuza.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Attributes.png" />
     <Content Include="Content\Images\background.png" />
     <Content Include="Content\Images\Calendar.png" />
     <Content Include="Content\Images\Chart.png" />
     <Content Include="Content\Images\CreateAQuestion.png" />
     <Content Include="Content\Images\Imibuza-Logo-Dark.png" />
     <Content Include="Content\Images\Imibuza-Logo-White.png" />
-    <Content Include="Content\Images\LandingPage.jpg" />
+    <Content Include="Content\Images\loader.png" />
     <Content Include="Content\Images\mwabo.png" />
-    <Content Include="Content\Images\mwabu-1.jpg" />
-    <Content Include="Content\Images\Mwabu-2-transparent.png" />
-    <Content Include="Content\Images\mwabu-2.png" />
-    <Content Include="Content\Images\Mwabu-transparent.png" />
     <Content Include="Content\Images\Slogan.png" />
+    <Content Include="Content\Images\space.png" />
     <Content Include="Content\Images\StartQuiz.png" />
+    <Content Include="Content\Images\Timeline.png" />
     <Content Include="Content\Styling\buttons.css">
       <DependentUpon>buttons.scss</DependentUpon>
     </Content>
@@ -256,6 +258,18 @@
     <Content Include="Content\Styling\spinner.css">
       <DependentUpon>spinner.scss</DependentUpon>
     </Content>
+    <Content Include="Content\Styling\Timeline\angular-timeline-animations.css">
+      <DependentUpon>angular-timeline-animations.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Styling\Timeline\angular-timeline-bootstrap.css">
+      <DependentUpon>angular-timeline-bootstrap.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Styling\Timeline\angular-timeline-images.css">
+      <DependentUpon>angular-timeline-images.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Styling\Timeline\angular-timeline.css">
+      <DependentUpon>angular-timeline.scss</DependentUpon>
+    </Content>
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -268,12 +282,17 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-sanitize.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-timeline.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\AngularUI\ui-router.js" />
+    <Content Include="Scripts\AngularUI\ui-router.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -294,11 +313,16 @@
     <Content Include="Content\Styling\dashboard.scss" />
     <Content Include="Content\Styling\create-quiz.scss" />
     <Content Include="Content\Styling\do-quiz.scss" />
+    <Content Include="Content\Styling\Timeline\angular-timeline-animations.scss" />
+    <Content Include="Content\Styling\Timeline\angular-timeline-bootstrap.scss" />
+    <Content Include="Content\Styling\Timeline\angular-timeline-images.scss" />
+    <Content Include="Content\Styling\Timeline\angular-timeline.scss" />
     <None Include="Properties\PublishProfiles\Imibuza.pubxml" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
+    <Content Include="Scripts\angular-sanitize.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -310,6 +334,14 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Timeline\angular-timeline-animate.js" />
+    <Content Include="Scripts\Timeline\angular-ui-router.js" />
+    <Content Include="Scripts\Timeline\timeline-badge-directive.js" />
+    <Content Include="Scripts\Timeline\timeline-directive.js" />
+    <Content Include="Scripts\Timeline\timeline-event-directive.js" />
+    <Content Include="Scripts\Timeline\timeline-footer-directive.js" />
+    <Content Include="Scripts\Timeline\timeline-heading-directive.js" />
+    <Content Include="Scripts\Timeline\timeline-panel-directive.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -322,8 +354,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -371,6 +401,20 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Imibuza.Domain\Imibuza.Domain.csproj">
+      <Project>{AD9816AC-A76F-4781-A459-68DD4CC2452C}</Project>
+      <Name>Imibuza.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Imibuza.Repositories\Imibuza.Repositories.csproj">
+      <Project>{DF527574-BC99-48F9-8EA1-BBCE375267CC}</Project>
+      <Name>Imibuza.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Imibuza.Services\Imibuza.Services.csproj">
+      <Project>{8AA2C181-0636-4DE5-AE64-B09E0709622F}</Project>
+      <Name>Imibuza.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

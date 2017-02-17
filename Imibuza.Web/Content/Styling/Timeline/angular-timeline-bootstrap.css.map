@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,sCAAuC;EACrC,GAAG,EAAE,GAAG",
+"sources": ["angular-timeline-bootstrap.scss"],
+"names": [],
+"file": "angular-timeline-bootstrap.css"
+}

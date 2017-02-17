@@ -2,8 +2,9 @@
 @import "_mixins.scss";
 
 
+
 .header{
-    position: absolute;
+    position: fixed;
     left: 0px;
     right: 0px;
     top: 0px;
@@ -29,7 +30,7 @@
 }
 
 .view{
-    padding: 100px 0 90px 0;
+    padding: 50px 0 0 0 ;
 
     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
       opacity: 0.5
@@ -56,4 +57,29 @@
     right:0;
     bottom:0;
     z-index: 1;
+}
+
+.loader{
+    width: 80px;
+    height: 80px;
+   img{
+       width: 100%;
+        -webkit-animation: pulsate 1s ease-out;
+        -webkit-animation-iteration-count: infinite; 
+   }
+}
+
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+
+.access-panel{
+    width: 80%;
+    max-width: 500px;
+    min-height: 200px;
+    padding: 50px;
+    background: red;
+
 }

@@ -35,7 +35,7 @@
     border: 1px solid #c1c1c1; }
     .quiz .option:hover {
       cursor: pointer;
-      background-color: #009ACE;
+      background-color: #2E86AB;
       color: white; }
   .quiz .message {
     margin-top: 30px;
@@ -96,7 +96,7 @@
   width: 100%;
   height: 35px;
   margin: 12px 0;
-  background-color: #009ACE;
+  background-color: #2E86AB;
   color: white;
   transition: all 0.3s; }
   .activated:hover {

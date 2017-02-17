@@ -72,7 +72,7 @@ namespace Imibuza.Web.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return Redirect("../Home/Dashboard");
+                    return Redirect("../");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:

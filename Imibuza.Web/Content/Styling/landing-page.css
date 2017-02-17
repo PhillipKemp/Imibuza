@@ -9,7 +9,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(../Images/LandingPage.jpg);
+  background-image: url(../Images/background.png);
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: cover; }
@@ -17,8 +17,7 @@
     position: absolute;
     top: 10px;
     left: 20px;
-    max-width: 150px;
-    height: 40%; }
+    max-width: 180px; }
     .landing-page .logo img {
       margin-top: 10px;
       width: 100%;
@@ -44,7 +43,7 @@
     background: rgba(255, 255, 255, 0.4);
     border-top-right-radius: 30px;
     border-bottom-left-radius: 60px; }
-    .landing-page .loginAndRegistration .header {
+    .landing-page .loginAndRegistration .landing-page-header {
       width: 100%;
       height: 80px;
       font-family: 'Imibuza Main';

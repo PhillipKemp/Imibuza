@@ -1,31 +1,41 @@
 ﻿<link href="~/Content/Styling/create-quiz.css" rel="stylesheet" />
 
 <div class="background" ng-controller="CreateQuizController" align="center">
+    
+    <div class="loader" ng-show="loading">
+        <img src="~/Content/Images/loader.png" />
+    </div>
+
     <div class="quiz">
         <div class="quiz-header">Adding a Question</div>
         <div class="questionWrapper">
             <div class="question">What is your question?</div>
-            <input placeholder="type the question here" ng-model="newQuestion.question" />
+            <input placeholder="type the question here" ng-model="newQuestion.question"/>
         </div>
-       
+
         <div class="questionWrapper">
             <div class="question">What is the CORRECT answer?</div>
-            <input placeholder="type the correct answer here" ng-model="newQuestion.correctAnswer" />
+            <input placeholder="type the correct answer here" ng-model="newQuestion.correctAnswer"/>
         </div>
         <div class="questionWrapper">
             <div class="question">Please give THREE(3) WRONG answer?</div>
-            <input placeholder="type one wrong answer here" ng-model="newQuestion.firstWrongAnswer" />
-            <input placeholder="type one wrong answer here" ng-model="newQuestion.secondWrongAnswer" />
-            <input placeholder="type one wrong answer here" ng-model="newQuestion.thirdWrongAnswer" />
+            <input placeholder="type one wrong answer here" ng-model="newQuestion.firstWrongAnswer"/>
+            <input placeholder="type one wrong answer here" ng-model="newQuestion.secondWrongAnswer"/>
+            <input placeholder="type one wrong answer here" ng-model="newQuestion.thirdWrongAnswer"/>
         </div>
+        <div class="questionWrapper">
+            <div class="question">Choose a category</div>
+            <select ng-options="category as category.Title for category in categories" ng-model="newQuestion.selectedCategory"></select>
+                
+            </div>
 
 
         <div class="button-row">
             <button class="left-button" ng-click="addOne()">only add this one</button>
             <button class="right-button" ng-click="addAnother()">add another</button>
         </div>
-           
 
-        </div>
+
+    </div>
 
 </div>

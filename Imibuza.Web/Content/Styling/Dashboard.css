@@ -5,18 +5,27 @@
   .dashboard .no-stats-left {
     position: relative;
     position: relative;
-    background-color: #f2f2f2;
+    background-color: rgba(255, 255, 255, 0.2);
     width: 100%;
-    height: 360px;
+    height: 250px;
     margin: 25px 0;
     border-radius: 50px 0 0 0;
-    background-image: url("../Images/Mwabu-transparent.png");
+    background-image: transparent;
     background-repeat: no-repeat;
     background-position: left bottom;
-    background-size: cover; }
+    background-size: cover;
+    overflow: auto;
+    text-align: center; }
+    .dashboard .no-stats-left::-webkit-scrollbar {
+      width: 12px; }
+    .dashboard .no-stats-left::-webkit-scrollbar-track {
+      background-color: transparent;
+      border-radius: 10px; }
+    .dashboard .no-stats-left::-webkit-scrollbar-thumb {
+      border-radius: 10px; }
     .dashboard .no-stats-left .stats .stats-header {
       width: 100%;
-      height: 18%;
+      height: 25%;
       font-family: 'Imibuza Main';
       text-align: center;
       padding-top: 20px;
@@ -24,8 +33,8 @@
     .dashboard .no-stats-left .stats .strengths {
       float: left;
       width: 50%;
-      height: 75%;
-      border-right: 5px solid #595959; }
+      height: 70%;
+      border-right: 5px solid #2E86AB; }
       .dashboard .no-stats-left .stats .strengths div {
         width: 100%;
         height: 60px; }
@@ -36,20 +45,20 @@
           line-height: 30px;
           color: white;
           font-size: 16px;
-          background-color: #F46506;
-          opacity: 0.6;
+          background-color: #2E86AB;
           border-radius: 0 0 0 20px;
           text-align: right;
           padding: 0 15px; }
         .dashboard .no-stats-left .stats .strengths div label {
           font-weight: normal;
           float: right;
-          padding: 2px 10px 0 0; }
+          padding: 2px 10px 0 0;
+          font-size: 0.8em; }
     .dashboard .no-stats-left .stats .weakness {
       float: left;
       width: 50%;
-      height: 75%;
-      border-left: 5px solid #595959; }
+      height: 70%;
+      border-left: 5px solid #FF6978; }
       .dashboard .no-stats-left .stats .weakness div {
         width: 100%;
         height: 60px; }
@@ -60,30 +69,39 @@
           line-height: 30px;
           color: white;
           font-size: 16px;
-          background-color: #595959;
-          opacity: 0.6;
+          background-color: #FF6978;
           border-radius: 0 0 20px 0;
           text-align: left;
           padding: 0 15px; }
         .dashboard .no-stats-left .stats .weakness div label {
           font-weight: normal;
           float: left;
-          padding: 2px 0 0 10px; }
+          padding: 2px 0 0 10px;
+          font-size: 0.8em; }
   .dashboard .no-stats-right {
     position: relative;
     position: relative;
-    background-color: #f2f2f2;
+    background-color: rgba(255, 255, 255, 0.2);
     width: 100%;
-    height: 360px;
+    height: 600px;
     margin: 25px 0;
-    border-radius: 0 0 50px 0;
-    background-image: url("../Images/Mwabu-2-transparent.png");
+    border-radius: 0 50px 0 0;
+    background-image: transparent;
     background-repeat: no-repeat;
     background-position: left bottom;
-    background-size: cover; }
+    background-size: cover;
+    overflow: auto;
+    text-align: center; }
+    .dashboard .no-stats-right::-webkit-scrollbar {
+      width: 12px; }
+    .dashboard .no-stats-right::-webkit-scrollbar-track {
+      background-color: transparent;
+      border-radius: 10px; }
+    .dashboard .no-stats-right::-webkit-scrollbar-thumb {
+      border-radius: 10px; }
     .dashboard .no-stats-right .stats .stats-header {
       width: 100%;
-      height: 18%;
+      height: 25%;
       font-family: 'Imibuza Main';
       text-align: center;
       padding-top: 20px;
@@ -91,8 +109,8 @@
     .dashboard .no-stats-right .stats .strengths {
       float: left;
       width: 50%;
-      height: 75%;
-      border-right: 5px solid #595959; }
+      height: 70%;
+      border-right: 5px solid #2E86AB; }
       .dashboard .no-stats-right .stats .strengths div {
         width: 100%;
         height: 60px; }
@@ -103,20 +121,20 @@
           line-height: 30px;
           color: white;
           font-size: 16px;
-          background-color: #F46506;
-          opacity: 0.6;
+          background-color: #2E86AB;
           border-radius: 0 0 0 20px;
           text-align: right;
           padding: 0 15px; }
         .dashboard .no-stats-right .stats .strengths div label {
           font-weight: normal;
           float: right;
-          padding: 2px 10px 0 0; }
+          padding: 2px 10px 0 0;
+          font-size: 0.8em; }
     .dashboard .no-stats-right .stats .weakness {
       float: left;
       width: 50%;
-      height: 75%;
-      border-left: 5px solid #595959; }
+      height: 70%;
+      border-left: 5px solid #FF6978; }
       .dashboard .no-stats-right .stats .weakness div {
         width: 100%;
         height: 60px; }
@@ -127,18 +145,18 @@
           line-height: 30px;
           color: white;
           font-size: 16px;
-          background-color: #595959;
-          opacity: 0.6;
+          background-color: #FF6978;
           border-radius: 0 0 20px 0;
           text-align: left;
           padding: 0 15px; }
         .dashboard .no-stats-right .stats .weakness div label {
           font-weight: normal;
           float: left;
-          padding: 2px 0 0 10px; }
+          padding: 2px 0 0 10px;
+          font-size: 0.8em; }
   .dashboard .create {
     position: relative;
-    background-color: #595959;
+    background-color: rgba(255, 255, 255, 0.2);
     width: 100%;
     height: 150px;
     margin: 25px 0;
@@ -146,7 +164,6 @@
     .dashboard .create .info {
       position: relative;
       text-align: center;
-      color: white;
       float: left;
       width: 70%;
       height: 100%;
@@ -158,8 +175,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0.9; }
+        transform: translate(-50%, -50%); }
     .dashboard .create .button {
       position: relative;
       float: left;
@@ -176,19 +192,18 @@
     .dashboard .create:hover {
       cursor: pointer; }
       .dashboard .create:hover .button {
-        background-color: #009ACE !important; }
+        background-color: #2E86AB !important; }
       .dashboard .create:hover .info {
-        background-color: #666666 !important; }
+        background-color: rgba(255, 255, 255, 0.5) !important; }
   .dashboard .doquiz {
     position: relative;
-    background-color: #595959;
+    background-color: rgba(255, 255, 255, 0.2);
     width: 100%;
     height: 150px;
     margin: 25px 0;
     border-radius: 0; }
     .dashboard .doquiz .info {
       position: relative;
-      color: white;
       float: left;
       width: 50%;
       height: 100%;
@@ -198,11 +213,10 @@
       transition: all 0.3s; }
       .dashboard .doquiz .info label {
         font-size: 16px;
-        font-weight: normal;
-        opacity: 0.9; }
+        font-weight: normal; }
       .dashboard .doquiz .info .fun-fact {
         margin-top: 5px;
-        opacity: 0.3; }
+        opacity: 0.9; }
     .dashboard .doquiz .button {
       position: relative;
       float: left;
@@ -219,8 +233,20 @@
     .dashboard .doquiz:hover {
       cursor: pointer; }
       .dashboard .doquiz:hover .button {
-        background-color: #009ACE !important; }
+        background-color: #2E86AB !important; }
       .dashboard .doquiz:hover .info {
-        background-color: #666666 !important; }
+        background-color: rgba(255, 255, 255, 0.5) !important; }
+
+.no-data {
+  width: 100%;
+  min-height: 300px;
+  padding: 200px 20px 0; }
+  .no-data label {
+    margin-top: 20px;
+    width: 100%;
+    font-family: 'Roboto Thin';
+    color: #AFAFAF; }
+  .no-data img {
+    width: 80px; }
 
 /*# sourceMappingURL=dashboard.css.map */

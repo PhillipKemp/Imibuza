@@ -2,17 +2,25 @@
 
 
 <div class="background" ng-controller="DoQuizController" align="center">
-    <div class="quiz">
-        <div class="quiz-header">{{quiz.category}}</div>
-        <div class="question">{{quiz.question}}</div>
-        
-        <div ng-repeat="answer in quiz.answers">
-            <selection answer="answer" source="quiz.answers" submit="submitAnswer()"></selection>
+    
+    <div >
+        <div class="loader" ng-show="loading">
+            <img src="~/Content/Images/loader.png"/>
         </div>
-        
-        <div class="message">{{result}}</div>
-       
-        <button class="cancel-button" ng-click="cancel()">cancel</button>
+
+        <div class="quiz" ng-show="!loading">
+            <div class="quiz-header">{{quiz.Category}}</div>
+            <div class="question">{{quiz.Question}}</div>
+
+            <div ng-repeat="answer in quiz.Answers">
+                <selection answer="answer" source="quiz.Answers" submit="submitAnswer(answer)"></selection>
+            </div>
+
+            <div class="message">{{result}}</div>
+
+            <button class="cancel-button" ng-click="cancel()">cancel</button>
+        </div>
     </div>
+
 
 </div>
