@@ -14,7 +14,7 @@
        
     }
     .create{
-         @include dashboardBanner(rgba(255,255,255,0.2), 150px, 0);
+         @include dashboardBanner(rgba(255,255,255,0.4), 150px, 0);
          .info{
              position: relative;
              text-align: center;
@@ -48,7 +48,7 @@
 
     } 
     .doquiz{
-         @include dashboardBanner(rgba(255,255,255,0.2), 150px,0);
+         @include dashboardBanner(rgba(255,255,255,0.4), 150px,0);
           .info{
               position: relative;
              float: left;

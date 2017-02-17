@@ -14,6 +14,10 @@ namespace Imibuza.Domain
 
         public Question ToDomain()
         {
+            var rnd = new Random();
+            var index = rnd.Next(1, 8);
+            var categoriesEnum = (CategoriesEnum)index;
+
             return new Question
             {
                 TheQuestion = Question,
@@ -21,7 +25,9 @@ namespace Imibuza.Domain
                 FirstWrongAnswer = FirstWrongAnswer,
                 SecondWrongAnswer = SecondWrongAnswer,
                 ThirdWrongAnswer = ThirdWrongAnswer,
-                Category = !string.IsNullOrEmpty(SelectedCategory) ? (CategoriesEnum)Enum.Parse(typeof(CategoriesEnum), SelectedCategory) : CategoriesEnum.Other
+                //Randomising the category because could net get it sent out through the select and angular
+                //Category = !string.IsNullOrEmpty(SelectedCategory) ? (CategoriesEnum)Enum.Parse(typeof(CategoriesEnum), SelectedCategory) : CategoriesEnum.Other
+                Category = categoriesEnum
             };
         }
 

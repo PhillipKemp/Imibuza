@@ -78,7 +78,7 @@
 
 @mixin noStatPanel($borderRadius, $background, $height){
     position: relative;
-        @include dashboardBanner(rgba(255,255,255,0.2), $height, $borderRadius);
+        @include dashboardBanner(rgba(255,255,255,0.4), $height, $borderRadius);
         background-image: $background;
         background-repeat: no-repeat;
         background-position: left bottom; 
@@ -134,7 +134,7 @@
 }
 
 @mixin menu-item($float, $padding, $color){
-    margin: 0 40px !important;
+    margin: 0 10px !important;
     float: $float;
     line-height: 80px;
     padding: $padding;
