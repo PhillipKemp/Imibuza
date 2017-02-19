@@ -39,14 +39,14 @@
                         <div class="stats-header">
                             strength & weakness
                         </div>
-                        <div class="strengths" ng-repeat="strength in strengths">
-                            <div>
+                        <div class="strengths">
+                            <div  ng-repeat="strength in strengths">
                                 <div class="stats-loader" ng-style="{ 'width' : strength.Percentage + '%' }">{{strength.Category}}</div>
                                 <label>{{strength.Value}}</label>
                             </div>
                            </div>
-                        <div class="weakness" ng-repeat="weakness in weaknesses">
-                            <div>
+                        <div class="weakness" >
+                            <div ng-repeat="weakness in weaknesses">
                                 <div class="stats-loader" ng-style="{ 'width' : strength.Percentage + '%'  }">{{weakness.Category}}</div>
                                 <label>{{weakness.Value}}</label>
                             </div>
