@@ -54,7 +54,7 @@
         .dashboard .no-stats-left .stats .strengths div label {
           text-align: right;
           font-weight: normal;
-          width: 100%;
+          width: 100% !important;
           float: right;
           padding: 2px 10px 0 0;
           font-size: 0.8em; }
@@ -81,7 +81,7 @@
         .dashboard .no-stats-left .stats .weakness div label {
           text-align: left;
           font-weight: normal;
-          width: 100%;
+          width: 100% !important;
           float: left;
           padding: 2px 0 0 10px;
           font-size: 0.8em; }
@@ -137,7 +137,7 @@
         .dashboard .no-stats-right .stats .strengths div label {
           text-align: right;
           font-weight: normal;
-          width: 100%;
+          width: 100% !important;
           float: right;
           padding: 2px 10px 0 0;
           font-size: 0.8em; }
@@ -164,7 +164,7 @@
         .dashboard .no-stats-right .stats .weakness div label {
           text-align: left;
           font-weight: normal;
-          width: 100%;
+          width: 100% !important;
           float: left;
           padding: 2px 0 0 10px;
           font-size: 0.8em; }

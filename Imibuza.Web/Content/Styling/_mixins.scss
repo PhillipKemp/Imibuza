@@ -72,7 +72,7 @@
     label{
         text-align: $textAlign;
         font-weight: normal;
-        width: 100%;
+        width: 100% !important;
         float: $float;
         padding: $padding;
         font-size: 0.8em;
