@@ -67,9 +67,12 @@
         border-radius: $radius;
         text-align: $textAlign;
         padding: 0 15px;
+        overflow:hidden
     }
     label{
+        text-align: $textAlign;
         font-weight: normal;
+        width: 100%;
         float: $float;
         padding: $padding;
         font-size: 0.8em;
